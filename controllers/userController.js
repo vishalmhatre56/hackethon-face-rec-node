@@ -239,9 +239,14 @@ console.log(req.body);
                     
                     if (body && body.length > 0) {
                       let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-                      console.log(jsonResponse);
+                      const jsonBody = JSON.parse(body);
+                      if(jsonBody.error) {
+                          console.log(jsonResponse);
+                          res.status(200).json({message: jsonBody.error.message, error:true})
+                      } else {
+                        res.status(200).json({message: 'Success', error:false})  
+                      }
                       //SEND RESPONSE TO FRONTEND
-                      res.status(200).json({message: 'success', error:false})
                     } else {
                         res.status(200).json({message: 'More than one Found', error:true})
                     }
