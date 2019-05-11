@@ -27,10 +27,17 @@ res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Ty
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
-
-  extended: false,
+  parameterLimit: 100000,
+  limit: '50mb',
+  extended: true
+  
 }));
-
+// app.use(async function (req, res, next) {
+//   console.log("middleware");
+//   console.log(req.body);
+  
+//   next()
+// })
 
 const users = require('./routes/userRoute');
 
