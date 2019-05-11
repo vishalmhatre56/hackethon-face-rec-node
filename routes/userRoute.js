@@ -5,7 +5,7 @@ const {auth}  = require('../services/auth.js');
  
 router.post('/register', userController.register);
 router.post('/login', userController.login);
-router.get('/profile',auth,userController.profile);
+router.get('/getimage',userController.getImage);
 
   
 module.exports = router;
