@@ -7,6 +7,7 @@ const uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/det
 
 module.exports = {
     async register(req, res) {
+console.log(req.body);
 
         const firstName = req.body.first_name ? req.body.first_name : '';
         const lastName = req.body.last_name ? req.body.last_name : '';
