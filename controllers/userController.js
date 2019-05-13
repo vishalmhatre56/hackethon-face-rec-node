@@ -150,9 +150,9 @@ console.log(req.body);
         'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
     var base64Data = imageData.replace(/^data:image\/jpeg;base64,/, "");
 
-    fs.writeFile("/home/nitin/Pictures/Webcam/loginApi.jpg", base64Data, 'base64', function(err) {
+    fs.writeFile("./Webcam/loginApi.jpg", base64Data, 'base64', function(err) {
         console.log(err);
-        fs.readFile('/home/nitin/Pictures/Webcam/loginApi.jpg', function(err, data) {
+        fs.readFile('./Webcam/loginApi.jpg', function(err, data) {
             if (err) throw err;
             var binaryImage = new Buffer(data, 'binary');
             const detectparams = {
@@ -207,9 +207,9 @@ console.log(req.body);
         // const bodyDetect = '{"url": ' + '"' + image2 + '"}';
         var base64Data = imageData.replace(/^data:image\/jpeg;base64,/, "");
     
-        fs.writeFile("/home/nitin/Pictures/Webcam/faceImage.jpg", base64Data, 'base64', function(err) {
+        fs.writeFile("./Webcam/faceImage.jpg", base64Data, 'base64', function(err) {
             err? console.log(err) : '';
-            fs.readFile('/home/nitin/Pictures/Webcam/faceImage.jpg', function(err, data) {
+            fs.readFile('./Webcam/faceImage.jpg', function(err, data) {
                 if (err) throw err;
                 var binaryImage = new Buffer(data, 'binary');
                 const detectparams = {
